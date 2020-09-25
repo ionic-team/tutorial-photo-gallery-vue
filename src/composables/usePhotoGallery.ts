@@ -1,8 +1,8 @@
-import { ref, onMounted, watch } from 'vue';
+import { ref, reactive, onMounted, watch } from 'vue';
 import { Plugins, CameraResultType, CameraSource, CameraPhoto, Capacitor, FilesystemDirectory } from "@capacitor/core";
 import { isPlatform } from '@ionic/vue';
 
-export default function usePhotoGallery() {
+export function usePhotoGallery() {
     const { Camera, Filesystem, Storage } = Plugins;
     const photos = ref<Photo[]>([]);
 
@@ -84,18 +84,46 @@ export default function usePhotoGallery() {
         photos.value.unshift(savedFileImage);
 
         // Cache all photo data for future retrieval
-        Storage.set({
-            key: "photos",
-            value: JSON.stringify(photos.value)
-        });
+        // Storage.set({
+        //     key: "photos",
+        //     value: JSON.stringify(photos.value)
+        // });
     };
+
+    const deletePhoto = async (photo: Photo) => {
+      // Remove this photo from the Photos reference data array
+      photos.value = photos.value.filter(p => p.filepath !== photo.filepath);
+  
+      // Storage.set({
+      //   key: "photos",
+      //   value: JSON.stringify(photos.value)
+      // });
+  
+      // delete photo file from filesystem
+      const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
+      await Filesystem.deleteFile({
+        path: filename,
+        directory: FilesystemDirectory.Data
+      });
+    };
+
+    const cachePhotos = () => {
+      console.log("caching...");
+      Storage.set({
+        key: "photos",
+        value: JSON.stringify(photos.value)
+      });
+    }
 
 
     onMounted(loadSaved);
 
+    watch(photos, cachePhotos);
+
     return {
         photos,
-        takePhoto
+        takePhoto,
+        deletePhoto
     }
 }
 
