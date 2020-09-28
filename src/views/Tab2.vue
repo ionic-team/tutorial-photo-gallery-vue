@@ -47,12 +47,12 @@ export default  {
         buttons: [{
           text: 'Delete',
           role: 'destructive',
-          icon: 'trash',
+          icon: trash,
           handler: () => {
             deletePhoto(photo);
         }}, {
           text: 'Cancel',
-          icon: 'close',
+          icon: close,
           role: 'cancel',
           handler: () => {
             // Nothing to do, action sheet is automatically closed
