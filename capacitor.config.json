@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "my-app",
+  "appId": "io.ionic.demo.pg.vue",
+  "appName": "Vue Photo Gallery",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "dist",
