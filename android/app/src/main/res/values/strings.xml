@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Vue Photo Gallery</string>
+    <string name="title_activity_main">Vue Photo Gallery</string>
+    <string name="package_name">io.ionic.demo.pg.vue</string>
+    <string name="custom_url_scheme">io.ionic.demo.pg.vue</string>
+</resources>
