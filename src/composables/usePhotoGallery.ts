@@ -5,9 +5,10 @@ import { isPlatform } from '@ionic/vue';
 export function usePhotoGallery() {
     const { Camera, Filesystem, Storage } = Plugins;
     const photos = ref<Photo[]>([]);
+    const PHOTO_STORAGE = "photos";
 
     const loadSaved = async () => {
-        const photoList = await Storage.get({ key: "photos" });
+        const photoList = await Storage.get({ key: PHOTO_STORAGE });
         const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
 
         // If running on the web...
@@ -98,7 +99,7 @@ export function usePhotoGallery() {
 
     const cachePhotos = () => {
       Storage.set({
-        key: "photos",
+        key: PHOTO_STORAGE,
         value: JSON.stringify(photos.value)
       });
     }
