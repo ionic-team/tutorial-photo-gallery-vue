@@ -31,5 +31,5 @@ After the user navigates to Tab 2 (Photos), they can tap/click on the camera but
 1) Clone this repository.
 2) In a terminal, change directory into the repo: `cd photo-gallery-capacitor-vue`.
 3) Install all packages: `npm install`.
-4) Run on the web: `ionic serve`.
+4) Run on the web: `npm run serve`.
 5) Run on iOS or Android: See [here](https://ionicframework.com/docs/building/running).
