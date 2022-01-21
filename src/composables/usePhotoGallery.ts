@@ -87,13 +87,13 @@ export function usePhotoGallery() {
   };
 
   const takePhoto = async () => {
-    const cameraPhoto = await Camera.getPhoto({
+    const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
     });
     const fileName = new Date().getTime() + '.jpeg';
-    const savedFileImage = await savePicture(cameraPhoto, fileName);
+    const savedFileImage = await savePicture(photo, fileName);
 
     photos.value = [savedFileImage, ...photos.value];
   };
