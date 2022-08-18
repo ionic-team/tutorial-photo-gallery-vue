@@ -17,11 +17,11 @@ After the user navigates to Tab 2 (Photos), they can tap/click on the camera but
 * Native runtime: [Capacitor](https://capacitorjs.com)
   * Taking photos: [Camera API](https://capacitorjs.com/docs/apis/camera)
   * Writing photo to the filesystem: [Filesystem API](https://capacitorjs.com/docs/apis/filesystem)
-  * Storing photo gallery metadata: [Storage API](https://capacitorjs.com/docs/apis/storage)
+  * Storing photo gallery metadata: [Preferences API](https://capacitorjs.com/docs/apis/preferences)
 
 ## Project Structure
 * Tab2 (Photos) (`src/views/Tab2.vue`): Photo Gallery UI and basic logic.
-* usePhotoGallery Hook (`src/composables/usePhotoGallery.ts`): Logic encapsulating Capacitor APIs, including Camera, Filesystem, and Storage.
+* usePhotoGallery Hook (`src/composables/usePhotoGallery.ts`): Logic encapsulating Capacitor APIs, including Camera, Filesystem, and Preferences.
 
 ## How to Run
 

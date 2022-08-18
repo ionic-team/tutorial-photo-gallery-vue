@@ -7,7 +7,7 @@ import {
   Photo,
 } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 
 import { isPlatform } from '@ionic/vue';
 
@@ -16,12 +16,12 @@ export function usePhotoGallery() {
   const PHOTO_STORAGE = 'photos';
 
   const loadSaved = async () => {
-    const photoList = await Storage.get({ key: PHOTO_STORAGE });
-    const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
+    const photoList = await Preferences.get({ key: PHOTO_STORAGE });
+    const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
     // If running on the web...
     if (!isPlatform('hybrid')) {
-      for (const photo of photosInStorage) {
+      for (const photo of photosInPreferences) {
         const file = await Filesystem.readFile({
           path: photo.filepath,
           directory: Directory.Data,
@@ -31,7 +31,7 @@ export function usePhotoGallery() {
       }
     }
 
-    photos.value = photosInStorage;
+    photos.value = photosInPreferences;
   };
 
   const convertBlobToBase64 = (blob: Blob) =>
@@ -111,7 +111,7 @@ export function usePhotoGallery() {
   };
 
   const cachePhotos = () => {
-    Storage.set({
+    Preferences.set({
       key: PHOTO_STORAGE,
       value: JSON.stringify(photos.value),
     });
