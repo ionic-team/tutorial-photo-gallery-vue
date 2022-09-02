@@ -10,12 +10,12 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/camera": "^1.0.0",
-    "@capacitor/core": "^3.0.0",
-    "@capacitor/filesystem": "^1.0.0",
-    "@capacitor/ios": "^3.0.0",
-    "@capacitor/storage": "^1.0.0",
+    "@capacitor/android": "^4.0.0",
+    "@capacitor/camera": "^4.0.0",
+    "@capacitor/core": "^4.0.0",
+    "@capacitor/filesystem": "^4.0.0",
+    "@capacitor/ios": "^4.0.0",
+    "@capacitor/preferences": "^4.0.1",
     "@ionic/pwa-elements": "^3.0.1",
     "@ionic/vue": "^5.6.7",
     "@ionic/vue-router": "^5.6.7",
@@ -24,7 +24,7 @@
     "vue-router": "^4.0.8"
   },
   "devDependencies": {
-    "@capacitor/cli": "^3.0.0",
+    "@capacitor/cli": "^4.0.0",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
     "@typescript-eslint/parser": "^2.33.0",
