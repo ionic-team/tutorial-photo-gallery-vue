@@ -1,4 +1,4 @@
-package io.ionic.demo.pg.vue;
+package io.ionic.starter;
 
 import com.getcapacitor.BridgeActivity;
 
