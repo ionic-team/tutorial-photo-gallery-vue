@@ -16,6 +16,10 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'vue/no-deprecated-slot-attribute': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
+    // The tutorial intentionally asserts non-null on Capacitor `Photo` fields
+    // (`photo.path!`, `photo.webPath!`) that are guaranteed present for the
+    // configured `resultType`/platform. Keep the taught code as-is.
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
   overrides: [
     {
