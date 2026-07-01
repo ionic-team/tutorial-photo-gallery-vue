@@ -20,14 +20,14 @@ After the user navigates to Tab 2 (Photos), they can tap/click on the camera but
   * Storing photo gallery metadata: [Preferences API](https://capacitorjs.com/docs/apis/preferences)
 
 ## Project Structure
-* Tab2 (Photos) (`src/views/Tab2.vue`): Photo Gallery UI and basic logic.
+* Tab2 (Photos) (`src/views/Tab2Page.vue`): Photo Gallery UI and basic logic.
 * usePhotoGallery Hook (`src/composables/usePhotoGallery.ts`): Logic encapsulating Capacitor APIs, including Camera, Filesystem, and Preferences.
 
 ## How to Run
 
 > Note: It's highly recommended to follow along with the [tutorial guide](https://ionicframework.com/docs/vue/your-first-app), which goes into more depth, but this is the fastest way to run the app. 
 
-0) Install Ionic if needed: `npm install -g @ionic/cli`.
+0) Use Node `^20.19.0 || >=22.12.0` (required by Vite 7 / Vitest 4), then install Ionic if needed: `npm install -g @ionic/cli`.
 1) Clone this repository.
 2) In a terminal, change directory into the repo: `cd photo-gallery-capacitor-vue`.
 3) Install all packages: `npm install`.

@@ -23,8 +23,18 @@ module.exports = {
         '**/__tests__/*.{j,t}s?(x)',
         '**/tests/unit/**/*.spec.{j,t}s?(x)'
       ],
-      env: {
-        jest: true
+      globals: {
+        describe: 'readonly',
+        it: 'readonly',
+        test: 'readonly',
+        suite: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        vi: 'readonly',
+        vitest: 'readonly'
       }
     }
   ]
