@@ -9,7 +9,7 @@
       <ion-grid>
         <ion-row>
           <ion-col size="6" v-for="photo in photos" :key="photo">
-            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+            <img :src="photo.webviewPath" loading="lazy" @click="showActionSheet(photo)"/>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -34,7 +34,6 @@ import {
   IonPage,
   IonHeader,
   IonIcon,
-  IonImg,
   IonRow,
   IonTitle,
   IonToolbar,
