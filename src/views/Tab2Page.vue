@@ -10,7 +10,7 @@
         <ion-row>
           <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
             <button @click="showActionSheet(photo)">
-              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy"/>
+              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
             </button>
           </ion-col>
         </ion-row>
