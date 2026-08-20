@@ -1,6 +1,10 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "photo-gallery",
+	"appId": "io.ionic.demo.pg.vue",
+	"appName": "Vue Photo Gallery",
 	"webDir": "dist",
-	"bundledWebRuntime": false
+	"plugins": {
+		"SplashScreen": {
+			"launchShowDuration": 0
+		}
+	}
 }

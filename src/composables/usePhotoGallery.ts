@@ -57,7 +57,7 @@ export const usePhotoGallery = () => {
       const file = await Filesystem.readFile({
         path: photo.path!,
       });
-      base64Data = file.data;
+      base64Data = typeof file.data === 'string' ? file.data : await file.data.text();
     } else {
       // Fetch the photo, read as a blob, then convert to base64 format
       const response = await fetch(photo.webPath!);

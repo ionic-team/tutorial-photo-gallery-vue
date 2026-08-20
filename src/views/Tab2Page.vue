@@ -8,8 +8,10 @@
     <ion-content>
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="photo in photos" :key="photo">
-            <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
+          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
+            <button @click="showActionSheet(photo)">
+              <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
+            </button>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -34,7 +36,6 @@ import {
   IonPage,
   IonHeader,
   IonIcon,
-  IonImg,
   IonRow,
   IonTitle,
   IonToolbar,
@@ -69,3 +70,22 @@ const showActionSheet = async (photo: UserPhoto) => {
   await actionSheet.present();
 };
 </script>
+
+<style scoped>
+ion-col > button {
+  display: block;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
+button img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+</style>
