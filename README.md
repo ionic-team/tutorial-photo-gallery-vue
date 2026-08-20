@@ -27,9 +27,9 @@ After the user navigates to Tab 2 (Photos), they can tap/click on the camera but
 
 > Note: It's highly recommended to follow along with the [tutorial guide](https://ionicframework.com/docs/vue/your-first-app), which goes into more depth, but this is the fastest way to run the app. 
 
-0) Use Node `^20.19.0 || >=22.12.0` (required by Vite 7 / Vitest 4), then install Ionic if needed: `npm install -g @ionic/cli`.
+0) Use Node `^20.19.0 || >=22.12.0` (required by Vite 8 / Vitest 4), then install Ionic if needed: `npm install -g @ionic/cli`.
 1) Clone this repository.
-2) In a terminal, change directory into the repo: `cd photo-gallery-capacitor-vue`.
+2) In a terminal, change directory into the repo: `cd tutorial-photo-gallery-vue`.
 3) Install all packages: `npm install`.
-4) Run on the web: `ionic serve`.
+4) Run on the web: `npm run dev` (Vite dev server at http://localhost:5173).
 5) Run on iOS or Android: See [here](https://ionicframework.com/docs/building/running).
