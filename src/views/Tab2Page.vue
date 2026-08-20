@@ -8,7 +8,7 @@
     <ion-content>
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="(photo, index) in photos" :key="photo">
+          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
             <button @click="showActionSheet(photo)">
               <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
             </button>
