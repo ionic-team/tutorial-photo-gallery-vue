@@ -1,6 +1,57 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "timezone": "America/New_York",
+  "minimumReleaseAge": "3 days",
+  "schedule": ["* 6-10 * * 1"],
+  "semanticCommits": "enabled",
+  "dependencyDashboard": true,
+  "packageRules": [
+    {
+      "matchPackageNames": ["@ionic/**"],
+      "minimumReleaseAge": "0 days",
+      "groupName": "ionic"
+    },
+    {
+      "matchPackageNames": ["vue"],
+      "groupName": "vue"
+    },
+    {
+      "matchPackageNames": ["vue-router"],
+      "groupName": "vue-router"
+    },
+    {
+      "matchPackageNames": ["@capacitor/**"],
+      "groupName": "capacitor"
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/**"],
+      "groupName": "vite"
+    },
+    {
+      "matchPackageNames": [
+        "vitest*",
+        "cypress*",
+        "@vue/test-utils",
+        "jsdom"
+      ],
+      "groupName": "testing"
+    },
+    {
+      "matchPackageNames": [
+        "eslint",
+        "eslint-plugin-*",
+        "@typescript-eslint/**",
+        "@vue/eslint-config-typescript",
+        "typescript",
+        "vue-tsc",
+        "prettier",
+        "pretty-quick"
+      ],
+      "groupName": "dev-tools"
+    }
   ]
 }
