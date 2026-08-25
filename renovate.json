@@ -1,0 +1,64 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)"
+  ],
+  "description": "Renovate may only open or update PRs on Mondays, 6-10am ET.",
+  "timezone": "America/New_York",
+  "minimumReleaseAge": "3 days",
+  "schedule": ["* 6-10 * * 1"],
+  "semanticCommits": "enabled",
+  "ignorePaths": ["android/**", "ios/**"],
+  "packageRules": [
+    {
+      "matchPackageNames": ["@ionic/**", "!@ionic/prettier-config"],
+      "minimumReleaseAge": "0 days",
+      "groupName": "ionic"
+    },
+    {
+      "matchPackageNames": ["vue"],
+      "groupName": "vue"
+    },
+    {
+      "matchPackageNames": ["vue-router"],
+      "groupName": "vue-router"
+    },
+    {
+      "matchPackageNames": ["@capacitor/**"],
+      "groupName": "capacitor"
+    },
+    {
+      "matchPackageNames": ["vite", "@vitejs/**"],
+      "groupName": "vite"
+    },
+    {
+      "matchPackageNames": [
+        "vitest*",
+        "cypress*",
+        "@vue/test-utils",
+        "jsdom"
+      ],
+      "groupName": "testing"
+    },
+    {
+      "matchPackageNames": [
+        "eslint",
+        "eslint-plugin-*",
+        "@typescript-eslint/**",
+        "@vue/eslint-config-typescript"
+      ],
+      "groupName": "linting"
+    },
+    {
+      "matchPackageNames": [
+        "typescript",
+        "vue-tsc",
+        "prettier",
+        "pretty-quick",
+        "@ionic/prettier-config"
+      ],
+      "groupName": "dev-tools"
+    }
+  ]
+}
