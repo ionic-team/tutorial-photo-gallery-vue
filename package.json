@@ -25,7 +25,7 @@
     "@capacitor/keyboard": "^8.0.5",
     "@capacitor/preferences": "^8.0.1",
     "@capacitor/status-bar": "^8.0.3",
-    "@ionic/pwa-elements": "~3.1.1",
+    "@ionic/pwa-elements": "~3.4.0",
     "@ionic/vue": "^9.0.0",
     "@ionic/vue-router": "^9.0.0",
     "ionicons": "^8.1.0",
