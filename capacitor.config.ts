@@ -1,12 +1,14 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.demo.pg.vue',
-  appName: 'Vue Photo Gallery',
+  appId: 'io.ionic.tutorial.photogallery.vue',
+  appName: 'tutorial-photo-gallery-vue',
   webDir: 'dist',
   plugins: {
     SplashScreen: {
-      launchShowDuration: 0,
+      launchAutoHide: false,
+      backgroundColor: '#ffffffff',
+      androidScaleType: 'CENTER_CROP',
     },
   },
 };
