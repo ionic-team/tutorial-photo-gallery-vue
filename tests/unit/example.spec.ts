@@ -1,4 +1,5 @@
 import { mount } from '@vue/test-utils';
+
 import Tab1Page from '@/views/Tab1Page.vue';
 
 describe('Tab1Page.vue', () => {
