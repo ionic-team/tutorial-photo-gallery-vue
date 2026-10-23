@@ -4,6 +4,7 @@ import { Capacitor } from '@capacitor/core';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Preferences } from '@capacitor/preferences';
 import { isPlatform } from '@ionic/vue';
+import type { Ref } from 'vue';
 import { ref, onMounted, watch } from 'vue';
 
 export interface UserPhoto {
@@ -11,7 +12,11 @@ export interface UserPhoto {
   webviewPath?: string;
 }
 
-export const usePhotoGallery = () => {
+export const usePhotoGallery = (): {
+  photos: Ref<UserPhoto[]>;
+  deletePhoto: (photo: UserPhoto) => Promise<void>;
+  takePhoto: () => Promise<void>;
+} => {
   const PHOTO_STORAGE = 'photos';
   const photos = ref<UserPhoto[]>([]);
 
