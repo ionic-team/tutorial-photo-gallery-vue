@@ -7,8 +7,8 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
-    // Scope collection to the unit dir so Cypress e2e specs under tests/e2e are
-    // never picked up (Vitest's default exclude covers cypress/ but not tests/e2e/).
+    // Scope collection to the unit dir so Playwright e2e specs under tests/e2e
+    // are never picked up.
     include: ['tests/unit/**/*.spec.ts'],
   },
   resolve: {

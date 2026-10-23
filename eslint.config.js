@@ -40,14 +40,4 @@ export default [
       globals: globals.vitest,
     },
   },
-  {
-    files: ['tests/e2e/**/*.js'],
-    languageOptions: {
-      globals: {
-        ...globals.mocha,
-        cy: 'readonly',
-        Cypress: 'readonly',
-      },
-    },
-  },
 ];
