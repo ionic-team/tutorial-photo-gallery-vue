@@ -5,10 +5,16 @@
         <ion-title>Photo Gallery</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content :fullscreen="true">
+      <ion-header collapse="condense">
+        <ion-toolbar>
+          <ion-title size="large">Photo Gallery</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
       <ion-grid>
         <ion-row>
-          <ion-col size="6" v-for="(photo, index) in photos" :key="index">
+          <ion-col size="6" :key="photo.filepath" v-for="(photo, index) in photos">
             <button @click="showActionSheet(photo)">
               <img :src="photo.webviewPath" :alt="`Photo ${index + 1}`" loading="lazy" />
             </button>
@@ -17,7 +23,7 @@
       </ion-grid>
 
       <ion-fab vertical="bottom" horizontal="center" slot="fixed">
-        <ion-fab-button @click="takePhoto()">
+        <ion-fab-button @click="addNewToGallery()">
           <ion-icon :icon="camera"></ion-icon>
         </ion-fab-button>
       </ion-fab>
@@ -26,24 +32,26 @@
 </template>
 
 <script setup lang="ts">
+import { camera, trash, close } from 'ionicons/icons';
 import {
-  actionSheetController,
-  IonContent,
-  IonCol,
-  IonFab,
-  IonFabButton,
-  IonGrid,
   IonPage,
   IonHeader,
+  IonFab,
+  IonFabButton,
   IonIcon,
-  IonRow,
-  IonTitle,
   IonToolbar,
+  IonTitle,
+  IonContent,
+  IonGrid,
+  IonRow,
+  IonCol,
+  actionSheetController,
 } from '@ionic/vue';
-import { camera, trash, close } from 'ionicons/icons';
-import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 
-const { photos, takePhoto, deletePhoto } = usePhotoGallery();
+import type { UserPhoto } from '@/composables/usePhotoGallery';
+import { usePhotoGallery } from '@/composables/usePhotoGallery';
+
+const { photos, addNewToGallery, deletePhoto } = usePhotoGallery();
 
 const showActionSheet = async (photo: UserPhoto) => {
   const actionSheet = await actionSheetController.create({
