@@ -15,7 +15,7 @@ const photos: UserPhoto[] = [
 ];
 
 const gallery = vi.hoisted(() => ({
-  takePhoto: vi.fn(),
+  addNewToGallery: vi.fn(),
   deletePhoto: vi.fn(),
 }));
 
@@ -60,7 +60,7 @@ describe('Tab2Page', () => {
 
     await wrapper.find('ion-fab-button').trigger('click');
 
-    expect(gallery.takePhoto).toHaveBeenCalledTimes(1);
+    expect(gallery.addNewToGallery).toHaveBeenCalledTimes(1);
   });
 
   it('opens the photo actions when a photo is tapped', async () => {
