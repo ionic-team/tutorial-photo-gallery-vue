@@ -28,8 +28,6 @@ export default [
       'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
       'vue/no-deprecated-slot-attribute': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
-      // Ionic's base level; `recommended` makes it an error, which is meant for libraries.
-      '@typescript-eslint/explicit-module-boundary-types': 'warn',
       // The tutorial intentionally asserts non-null on Capacitor `Photo` fields
       // (`photo.path!`, `photo.webPath!`) that are guaranteed present for the
       // configured `resultType`/platform. Keep the taught code as-is.
