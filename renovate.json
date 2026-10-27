@@ -13,7 +13,7 @@
   "gitIgnoredAuthors": ["hi@ionicframework.com"],
   "packageRules": [
     {
-      "matchPackageNames": ["@ionic/**", "!@ionic/prettier-config"],
+      "matchPackageNames": ["@ionic/**", "!@ionic/eslint-config", "!@ionic/prettier-config"],
       "minimumReleaseAge": "0 days",
       "groupName": "ionic"
     },
@@ -46,7 +46,9 @@
       "matchPackageNames": [
         "eslint",
         "eslint-plugin-*",
-        "@typescript-eslint/**",
+        "@eslint/**",
+        "@ionic/eslint-config",
+        "globals",
         "@vue/eslint-config-typescript"
       ],
       "groupName": "linting"
@@ -56,7 +58,6 @@
         "typescript",
         "vue-tsc",
         "prettier",
-        "pretty-quick",
         "@ionic/prettier-config"
       ],
       "groupName": "dev-tools"
