@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import { camera, trash, close } from 'ionicons/icons';
 import {
   IonPage,
   IonHeader,
@@ -47,6 +46,7 @@ import {
   IonCol,
   actionSheetController,
 } from '@ionic/vue';
+import { camera, trash, close } from 'ionicons/icons';
 
 import type { UserPhoto } from '@/composables/usePhotoGallery';
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
